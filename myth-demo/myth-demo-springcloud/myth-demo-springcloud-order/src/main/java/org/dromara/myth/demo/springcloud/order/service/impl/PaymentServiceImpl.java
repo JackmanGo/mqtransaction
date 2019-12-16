@@ -64,7 +64,7 @@ public class PaymentServiceImpl implements PaymentService {
 
 
     @Override
-    @Myth(destination = "")
+    //@Myth(destination = "")
     public void makePayment(Order order) {
 
 

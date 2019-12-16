@@ -35,11 +35,17 @@ import java.util.Objects;
  */
 public class MythFeignBeanPostProcessor implements BeanPostProcessor {
 
+    /**
+     * bean初始化方法调用前被调用
+     */
     @Override
     public Object postProcessBeforeInitialization(final Object bean, final String beanName) throws BeansException {
         return bean;
     }
 
+    /**
+     * bean初始化方法调用后被调用
+     */
     @Override
     public Object postProcessAfterInitialization(final Object bean, final String beanName) throws BeansException {
         if (!Proxy.isProxyClass(bean.getClass())) {

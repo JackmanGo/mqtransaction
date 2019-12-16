@@ -49,7 +49,7 @@ public class RabbitmqSendServiceImpl implements MythMqSendService, RabbitTemplat
 
     @Override
     public void sendMessage(final String destination, final Integer pattern, final byte[] message) {
-        log.info("send MQ:"+new String(message));
+        log.info("send MQ==={},===>{},===>{}:",destination, pattern, new String(message));
         amqpTemplate.convertAndSend(destination, message);
     }
 

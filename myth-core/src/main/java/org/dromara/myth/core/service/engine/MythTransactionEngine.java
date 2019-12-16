@@ -92,6 +92,7 @@ public class MythTransactionEngine {
         context.setTransId(mythTransaction.getTransId());
         //设置为发起者角色
         context.setRole(MythRoleEnum.START.getCode());
+        //FeignInterceptor 去get并setHeader
         TransactionContextLocal.getInstance().set(context);
     }
 

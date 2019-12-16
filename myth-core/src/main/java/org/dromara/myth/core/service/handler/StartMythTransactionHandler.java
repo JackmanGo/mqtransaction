@@ -50,7 +50,9 @@ public class StartMythTransactionHandler implements MythTransactionHandler {
     public Object handler(final ProceedingJoinPoint point, final MythTransactionContext mythTransactionContext) throws Throwable {
         try {
             mythTransactionEngine.begin(point);
+            //继续执行业务方法，如RPC调用等
             final Object proceed = point.proceed();
+            //一切正常，提交事务。更新保存的事务的状态和当前TheadLocal中的事务状态
             mythTransactionEngine.updateStatus(MythStatusEnum.COMMIT.getCode());
             return proceed;
         } catch (Throwable throwable) {

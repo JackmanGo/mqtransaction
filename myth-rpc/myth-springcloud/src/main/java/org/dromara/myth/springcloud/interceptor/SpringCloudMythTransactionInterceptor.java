@@ -49,6 +49,7 @@ public class SpringCloudMythTransactionInterceptor implements MythTransactionInt
     public Object interceptor(final ProceedingJoinPoint pjp) throws Throwable {
         RequestAttributes requestAttributes = RequestContextHolder.currentRequestAttributes();
         HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
+        //request.getHeader方法即为RpcAcquire接口的实现
         MythTransactionContext mythTransactionContext = RpcMediator.getInstance().acquire(request::getHeader);
         return mythTransactionAspectService.invoke(mythTransactionContext, pjp);
     }

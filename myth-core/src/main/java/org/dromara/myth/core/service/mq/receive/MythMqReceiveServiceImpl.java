@@ -119,6 +119,7 @@ public class MythMqReceiveServiceImpl implements MythMqReceiveService {
                 //如果是执行失败的话
                 if (mythTransaction.getStatus() == MythStatusEnum.FAILURE.getCode()) {
                     //如果超过了最大重试次数 则不执行
+                    //最大重试次数是通过具体MQ消息。让MQ重发来实现的
                     if (mythTransaction.getRetriedCount() >= mythConfig.getRetryMax()) {
                         LogUtil.error(LOGGER, () -> "此事务已经超过了最大重试次数:" + mythConfig.getRetryMax()
                                 + " ,执行接口为:" + entity.getMythInvocation().getTargetClass() + " ,方法为:"
