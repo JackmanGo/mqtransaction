@@ -115,7 +115,7 @@ public class ScheduledService implements ApplicationListener<ContextRefreshedEve
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         if (mythConfig.getNeedRecover()) {
-            scheduledAutoRecover();
+            //scheduledAutoRecover();
         }
     }
 }

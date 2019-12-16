@@ -17,19 +17,21 @@
 
 package org.dromara.myth.rabbitmq.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.myth.common.utils.LogUtil;
 import org.dromara.myth.core.service.MythMqSendService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.rabbit.support.CorrelationData;
 
 /**
  * RabbitmqSendServiceImpl.
  *
  * @author xiaoyu(Myth)
  */
+@Slf4j
 public class RabbitmqSendServiceImpl implements MythMqSendService, RabbitTemplate.ConfirmCallback {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RabbitmqSendServiceImpl.class);
@@ -47,6 +49,7 @@ public class RabbitmqSendServiceImpl implements MythMqSendService, RabbitTemplat
 
     @Override
     public void sendMessage(final String destination, final Integer pattern, final byte[] message) {
+        log.info("send MQ:"+new String(message));
         amqpTemplate.convertAndSend(destination, message);
     }
 

@@ -22,7 +22,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
-        <myth.version>2.0.1-RELEASE</myth.version>
+        <myth.version>2.0.2-RELEASE</myth.version>
         <spring-cloud.version>Dalston.SR1</spring-cloud.version>
         <springfox.version>2.6.1</springfox.version>
         <rocketmq.version>4.1.0-incubating</rocketmq.version>
@@ -72,6 +72,10 @@
                 <artifactId>myth-rabbitmq</artifactId>
                 <version>${myth.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.dromara</groupId>
+                <artifactId>myth-core</artifactId>
+            </dependency>
 
             <dependency>
                 <groupId>org.dromara</groupId>
@@ -88,6 +92,11 @@
             <dependency>
                 <groupId>org.dromara</groupId>
                 <artifactId>myth-aliyunmq</artifactId>
+                <version>${myth.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dromara</groupId>
+                <artifactId>myth-common</artifactId>
                 <version>${myth.version}</version>
             </dependency>
 

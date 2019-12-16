@@ -6,13 +6,19 @@ server:
 
 
 spring:
+    rabbitmq:
+        addresses: 127.0.0.1:32769
+        password: admin
+        username: admin
+        publisher-confirms: true
+        publisher-returns: true
     main:
         allow-bean-definition-overriding: true
     datasource:
         driver-class-name:  com.mysql.jdbc.Driver
-        url: jdbc:mysql://192.168.1.98:3306/myth_order?useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://127.0.0.1:3306/myth_order?useUnicode=true&characterEncoding=utf8
         username: root
-        password: 123456
+        password: toor
         initialSize: 20
         minIdle: 20
         maxActive: 100
@@ -53,9 +59,9 @@ org:
         repositorySupport : db
         mythDbConfig :
                  driverClassName  : com.mysql.jdbc.Driver
-                 url :  jdbc:mysql://192.168.1.98:3306/myth?useUnicode=true&amp;characterEncoding=utf8
+                 url :  jdbc:mysql://127.0.0.1:3306/myth?useUnicode=true&amp;characterEncoding=utf8
                  username : root
-                 password : 123456
+                 password : toor
 
        # repositorySupport : redis
        #         hostName  : 192.168.1.68

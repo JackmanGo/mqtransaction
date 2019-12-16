@@ -71,7 +71,7 @@
         <druid.version>1.0.29</druid.version>
         <springfox.version>2.6.1</springfox.version>
         <lombok.version>1.16.20</lombok.version>
-        <spring-rabbit.version>1.7.4.RELEASE</spring-rabbit.version>
+        <spring-rabbit.version>2.1.2.RELEASE</spring-rabbit.version>
         <amqp-client.version>4.0.3</amqp-client.version>
         <spring-amqp.version>1.7.4.RELEASE</spring-amqp.version>
         <spring-kafka.version>1.1.2.RELEASE</spring-kafka.version>
